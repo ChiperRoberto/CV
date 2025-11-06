@@ -1,0 +1,170 @@
+/* Reset simplu și setări de bază */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f8fb; /* fundal deschis */
+  color: #1f2937;            /* gri închis pentru text principal */
+  font-family: "Roboto", Arial, sans-serif; /* font principal + rezerve */
+  line-height: 1.6;
+}
+
+/* Linkuri (accent albastru) */
+a {
+  color: #2f6eff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+/* Carduri albe cu colțuri rotunjite și umbră ușoară */
+.card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Secțiunea de antet (hero) */
+.hero {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6b7280; /* gri pentru text secundar */
+  margin: 0;
+}
+
+/* Layout responsive: o coloană pe mobil, două coloane pe ecrane mari */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr; /* implicit: o coloană */
+  gap: 20px;
+  align-items: start;
+}
+
+/* Sidebar și conținut principal */
+.sidebar {
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+}
+
+/* Pe ecrane late: două coloane (sidebar 300px + conținut principal) */
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Secțiuni reutilizabile */
+.contact p {
+  margin: 8px 0;
+}
+
+.muted {
+  color: #6b7280; /* text secundar */
+  font-size: 0.95rem;
+}
+
+/* Liste de competențe (chip-uri) */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+}
+
+/* Item generic (educație / experiență) */
+.item {
+  padding: 10px 0 14px;
+  border-bottom: 1px solid #eef2f7;
+}
+.item:last-child {
+  border-bottom: none;
+}
+.item h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.item ul {
+  margin: 8px 0 0 18px;
+}
+
+/* Subsol / footer */
+.footer {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+  padding: 8px 0 20px;
+}
+
+/* Titlurile de secțiune */
+h2 {
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #eef2f7;
+}
+
+/* Accente și mici detalii */
+strong {
+  color: #111827;
+}
+
+/* Interacțiune pentru zonele editabile (contenteditable) */
+[contenteditable="true"] {
+  transition: background-color 0.15s ease, outline-color 0.15s ease;
+  border-radius: 6px; /* ca să se vadă frumos focusul */
+}
+
+/* Hover pe zonele editabile */
+[contenteditable="true"]:hover {
+  background-color: #eef4ff;
+  cursor: text;
+}
+
+/* Focus pe zonele editabile */
+[contenteditable="true"]:focus {
+  outline: 2px solid #2f6eff;
+  background-color: #ffffff;
+}
